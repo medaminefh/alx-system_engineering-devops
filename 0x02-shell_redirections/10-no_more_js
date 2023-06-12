@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -regex '.*js' | rm 
+find . -mindepth 1 -name '.*js' -type f -delete
