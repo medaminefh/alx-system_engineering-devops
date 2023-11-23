@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+c=1
+while [ "$c" -lt 21 ];
+do
+	echo "$c"
+       if [ "$c" -eq 4 ];
+       then
+	       echo "bad luck from China"
+	 elif [ "$c" -eq 9 ];
+	 then
+		 echo "bad luck from Japan"
+	 elif [ "$c" -eq 17 ];
+	 then
+		 echo "bad luck from Italy"
+       fi
+
+       ((c++))
+done
