@@ -4,16 +4,18 @@ c=1
 while [ "$c" -lt 21 ];
 do
 	echo "$c"
-       if [ "$c" -eq 4 ];
-       then
+       case $c in
+
+	       4)
 	       echo "bad luck from China"
-	 elif [ "$c" -eq 9 ];
-	 then
-		 echo "bad luck from Japan"
-	 elif [ "$c" -eq 17 ];
-	 then
-		 echo "bad luck from Italy"
-       fi
+	       ;;
+       9)
+	 	echo "bad luck from Japan"
+		;;
+	17)
+		echo "bad luck from Italy"
+		;;
+esac
 
        ((c++))
 done
