@@ -1,0 +1,17 @@
+Def:
+
+1. What is a server: A server is a piece of computer hardware or software that provides functionality for other programs.
+2. What is the role of the domain name: A domain name serves to identify internet resources (computers) with a human readable text such as (foobar).
+3. What type of DNS record `www` is in `www.foobar.com`: the type of the `www` is the CNAME.
+4. What is the role of a web server: the main role of web servers is to handle requests coming from a browser and send them responses.
+5. What is the role of the application server: the main role is to display what  codebase is (HTML, CSS, JS, JSON, ...).
+6.What is the role of the database: the role of a database is to store data in a way that we can manipulate it(Add new data, updating existing data, deleting, accessing).
+7.What is the server using to communicate with the computer of the user requesting the website: the server uses the HTTP/HTTPS protocol.
+
+Weekinesses:
+
+*SPOF: single point of failure, we have here many SPOF (one server, one app server, one database), if one is failed in some point, will lead others to fail as well.
+
+*Downtime when maintenance needed (like deploying new code web server needs to be restarted: when pushing a new version to be uploaded it will affect the endusers who can't see the new version, and it might need a server restart and that the end users will not be able to access the server.
+
+*Cannot scale if too much incoming traffic: this type of infrastructure can't scale because it have one server, so when there is a big traffic, probably will shutdown or will increase the load time for end users.
