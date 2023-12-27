@@ -1,0 +1,13 @@
+Def:
+
+1-For every additional element, why you are adding it: we added a new server to eliminate the crash of the server when it gets so many requests, and that will be handled via the load-balancer.
+2-What distribution algorithm your load balancer is configured with and how it works: Our load-balancer uses the Round Robin algo, which distribute requests accross the two servers sequentially, to low the pressure on servers.
+3-Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both: our load-balancer enables an Active-Active config so both servers accepts requests.
+4-How a database Primary-Replica (Master-Slave) cluster works: Primary-Replica cluster enables data stored in the master db, to be copied(replicated) to one or more dbs (slaves).
+5-What is the difference between the Primary node and the Replica node in regard to the application: the main difference between the master node and the replica is that the master db works as the authorative source, and the replica dbs are synchronized to it.
+
+Weeknesses:
+
+-SPOF: I think that the single point of failure here is that there is one load-balancer, so if that crushes or get updates, both of our servers will not getting requests.
+-Security issues (no firewall, no HTTPS): Our major threat is that our application communicate through the HTTP protocl, and that might be a problem and make it vulnerable to attacks.
+-No monitoring: Monitoring an application would be so helpful for us, to identify any problem, downtime and security threats
