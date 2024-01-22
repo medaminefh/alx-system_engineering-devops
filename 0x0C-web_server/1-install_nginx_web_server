@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Transfer file to server
+
+apt-get update
+apt-get install nginx
+ufw allow 'Nginx HTTP'
+echo 'Hello World!' | tee /var/www/html/index.html
+service nginx start
