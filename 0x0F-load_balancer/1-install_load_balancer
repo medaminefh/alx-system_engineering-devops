@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Install HAproxy
+
+apt-get update -y
+apt-get install -y --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.8
+apt-get install -y haproxy=2.8.\*
+
+# Configure HAproxy
+printf %s "frontend web_frontend
+    bind *:80
+    mode http
+    default_backend web_backend
+
+backend web_backend
+    mode http
+    balance roundrobin
+    server web-01 440136-web-01 54.82.132.211:80 check
+    server web-02 440136-web-02 100.25.194.199:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+# Enable HAproxy init script
+sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
+
+# Restart HAproxy service
+service haproxy restart
