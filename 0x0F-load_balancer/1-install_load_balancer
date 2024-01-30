@@ -15,8 +15,8 @@ printf %s "frontend web_frontend
 backend web_backend
     mode http
     balance roundrobin
-    server web-01 440136-web-01 54.82.132.211:80 check
-    server web-02 440136-web-02 100.25.194.199:80 check
+    server 440136-web-01 54.82.132.211:80 check
+    server 440136-web-02 100.25.194.199:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 # Enable HAproxy init script
