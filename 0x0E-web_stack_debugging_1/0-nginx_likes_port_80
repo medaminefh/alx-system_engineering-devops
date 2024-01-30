@@ -1,0 +1,6 @@
+#!/bin/bash
+# Configure Nginx to run on port 80
+
+rm /etc/nginx/sites-enabled/mysite.com
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
