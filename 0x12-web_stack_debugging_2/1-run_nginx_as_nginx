@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# running a command with a specified user
+sed -i "s/#user www-data nginx/" /etc/nginx/nginx.conf
+chmod 644 /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
