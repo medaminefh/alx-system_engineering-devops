@@ -16,4 +16,5 @@ def top_ten(subreddit):
         print('None')
         return
     for i in range(10):
-        print(response.json().get('data').get('children')[i].get('data').get('title'))
+        print(response.json().get('data').get(
+            'children')[i].get('data').get('title'))
